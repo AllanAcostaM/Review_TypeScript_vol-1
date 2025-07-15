@@ -1,39 +1,66 @@
-// tipos de datos: 
+// tipos de datos avanzados 
 
-let movie: string = "El señor de los anillos";
-let duration: number = 200;
-let hasOscars: boolean = true;
 
-movie = "La comunidad del Anillo";
-// movie = 1234;
+// Union:
 
-duration = 240;
+let id: string | number = "plomo es lo que hay, plomo es lo que viene"
+id = 12344;
 
-hasOscars = false;
+type id = number | string;
 
-let myObject: object = {
-    product: "computer",
-    price: 1234
+let userId: id = "plomo es lo que hay, plomo es lo que viene!!!";
+
+let myArr: (number | string | boolean) [] = [10, 20, 30];
+
+myArr = [40, 50, "str1", "str2", true, false,]
+
+// literal
+
+type stateLoading = "loading";
+type stateError = "error"
+
+let stateloading: stateLoading = "loading";
+let stateSecond: stateError = "error"; 
+
+
+type state = stateLoading | stateError 
+
+let state: state = "error";
+
+
+type movie = {
+    title: string;
+    duration: number;
+    finalContinue: boolean | string;
 }
 
-myObject = {
-    patata: true
+const esdla: movie = {
+    title: "el señor de los anillos",
+    duration: 240,
+    finalContinue: "true",
 }
 
-// myObject = [];
+// Interseccion
 
-let myArr: string[] = ["10", "20", "30"];
+type book = {
+    title: string,
+    author: string,
+    pages: number,
+}
 
-myArr = ["40", "50"];
-// myArr = ["dfvd", "sdfsf"]
+type bookAdaptation = movie & book;
 
-let data: any = 9999;
+const harryPotter: bookAdaptation = {
+    title: "Harry Potter",
+    author: "matarife",
+    duration: 220,
+    pages: 150,
+    finalContinue: true
+}
 
-data = "ahora es un string";
-data = false;
-
-console.log(movie, duration, hasOscars, data);
+console.log(esdla);
 
 
+console.log(harryPotter);
 
 
