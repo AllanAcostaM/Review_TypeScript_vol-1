@@ -1,22 +1,13 @@
-// Funciones
+// DOM elements
 
-function sum(n1: number, n2: number) {
-    return n1 + n2;
-}
+const h1 = document.querySelector("h1");
+console.log(h1?.textContent);
 
-let result = sum(3, 4)
-console.log(result);
+const title = document.querySelector(".title") as HTMLHeadingElement;
+console.log(title.textContent);
 
-
-
-const toUpper = (str: string) => str.toUpperCase();
-let str = toUpper("hello");
-console.log(str);
+const username = document.querySelector("#username") as HTMLInputElement
+console.log(username.placeholder);
 
 
-function sayHello() {
-    console.log("hello!!");
-}
-
-sayHello();
 
