@@ -1,22 +1,26 @@
-// Generics 
+// clases
 
-// function getFirstElement(array: number[]) {
-//     return array[0];
-// }
+class Movie {
+  // private title: string;
+  // duration: number;
+  // readonly hasOscars: boolean
 
-function getFirstElement<T>(array: T[]) {
-    return array[0];
+  constructor(
+    public title: string,
+    private duration: number,
+    readonly hasOscars: boolean
+  ) {}
+
+  getInfo() {
+    return `Title: ${this.title} - Duration: ${this.duration} - Has Oscars ${this.hasOscars}`;
+  }
 }
 
-const numArr = [10, 20, 30];
-const firstNum = getFirstElement(numArr);
-console.log(firstNum);
+const movie1 = new Movie("El Señor de los Anillos", 300, true);
+const movie2 = new Movie("Gigantes de Acero", 160, false);
 
-const strArr = ["a", "b", "c"]
-const firsStr = getFirstElement(strArr);
-console.log(firsStr);
 
-const username = document.querySelector<HTMLInputElement>("#username")
-console.log(username?.placeholder);
- 
+console.log(movie1, movie2);
+console.log(movie1.getInfo());
+
 

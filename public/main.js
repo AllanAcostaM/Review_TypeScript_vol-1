@@ -1,16 +1,19 @@
 "use strict";
-// Generics 
-// function getFirstElement(array: number[]) {
-//     return array[0];
-// }
-function getFirstElement(array) {
-    return array[0];
+// clases
+class Movie {
+    // private title: string;
+    // duration: number;
+    // readonly hasOscars: boolean
+    constructor(title, duration, hasOscars) {
+        this.title = title;
+        this.duration = duration;
+        this.hasOscars = hasOscars;
+    }
+    getInfo() {
+        return `Title: ${this.title} - Duration: ${this.duration} - Has Oscars ${this.hasOscars}`;
+    }
 }
-const numArr = [10, 20, 30];
-const firstNum = getFirstElement(numArr);
-console.log(firstNum);
-const strArr = ["a", "b", "c"];
-const firsStr = getFirstElement(strArr);
-console.log(firsStr);
-const username = document.querySelector("#username");
-console.log(username === null || username === void 0 ? void 0 : username.placeholder);
+const movie1 = new Movie("El Señor de los Anillos", 300, true);
+const movie2 = new Movie("Gigantes de Acero", 160, false);
+console.log(movie1, movie2);
+console.log(movie1.getInfo());
